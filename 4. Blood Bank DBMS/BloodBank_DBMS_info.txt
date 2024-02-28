@@ -1,0 +1,72 @@
+## Topics to be covered:-
+Comaprision operator (>,<,>=,<=,!=), 
+AND, OR & NOT operator using in operator,
+LIKE operator,
+Between & Not Between,
+Distinct & Order by,
+Null & Not Null,
+Limit & Offset,
+Alter, Update and Case,
+Aggregate function (count,sum,min,max,avg),
+Delete function,
+Joins (inner join, left join, right join),
+Group by & Having Function,
+Exists,
+Any & All function,
+Date Functions,
+Sub Query (most important)
+
+
+## Blood Bank Database Management System:
+Patient Table:
+Patient_ID (Primary Key): A unique identifier for each patient.
+Patient_Name: The name of the patient.
+Blood_Group: The blood group of the patient (e.g., A+, B-, AB+, O-).
+Disease: A character field that stores the patient's disease, limited to values 'A', 'B', 'AB', or 'O'.
+Patient_Contact: The contact number of the patient.
+Patient_Address: The address of the patient.
+
+Donor Table:
+Donor_ID (Primary Key): A unique identifier for each blood donor.
+Donor_Name: The name of the blood donor.
+Medical_Report: A field to indicate the donor's medical report status, limited to values 'Satisfactory' or 'Not Satisfactory'.
+Donor_Contact: The contact number of the donor.
+Donor_Address: The address of the donor.
+Donate_Date: The date when the donor made the blood donation.
+
+Blood_Bank Table:
+Blood_Bank_ID (Primary Key): A unique identifier for each blood bank.
+Blood_Bank_Name: The name of the blood bank.
+Blood_Bank_Contact: The contact number of the blood bank.
+Blood_Bank_Address: The address of the blood bank.
+Patient_ID (Foreign Key): A reference to the patient who received the blood, if applicable.
+Donor_ID (Foreign Key): A reference to the donor who donated the blood, if applicable.
+
+Blood Inventory Table:
+Blood_ID (Primary Key): A unique identifier for each blood unit in the inventory.
+Blood_Type: The blood type of the unit (e.g., A+, B-, AB+, O-).
+Quantity: The quantity of blood units available.
+Expiration_Date: The date when the blood unit expires.
+Storage_Location: The location where the blood unit is stored.
+
+Blood Donation History Table:
+Donation_ID (Primary Key): A unique identifier for each blood donation.
+Donor_ID (Foreign Key): A reference to the donor who made the donation.
+Donation_Date: The date when the blood donation was made.
+Donation_Details: Any additional details or notes related to the donation.
+
+Blood Request Table:
+Request_ID (Primary Key): A unique identifier for each blood request.
+Patient_ID (Foreign Key): A reference to the patient making the request.
+Blood_Type: The blood type requested by the patient.
+Quantity: The quantity of blood units requested.
+Request_Date: The date when the request was made.
+Status: The status of the request (e.g., pending, fulfilled).
+
+Blood Transfusion Log Table:
+Transfusion_ID (Primary Key): A unique identifier for each blood transfusion.
+Patient_ID (Foreign Key): A reference to the patient receiving the blood.
+Donor_ID (Foreign Key): A reference to the donor (if known).
+Blood_Type: The blood type used in the transfusion.
+Transfusion_Date: The date of the transfusion.
+Transfusion_Details: Any additional details about the transfusion.

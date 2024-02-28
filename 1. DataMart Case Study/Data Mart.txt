@@ -1,0 +1,4 @@
+1. First open the DataMart Schema in MySQL Workbench and run it all.
+2. The first part is data cleaning: on week_date, where some manipulations are done wrt date, months and years columns. Also nothing can be understood by the segment column.
+3. In total there are 7 steps in Data Cleaning:
+i. 
