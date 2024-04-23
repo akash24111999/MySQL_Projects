@@ -1,0 +1,38 @@
+1. At first my file (googleplaystore.csv) was full of impurities as it was not getting imported into mysql workbench completely.
+2. To tackle this I performed Data Cleaning using Python Pandas.
+3. Removed the null values and the unnnamed columns.
+4. Updated the 'Last_Updated' column by changing the datatype of column to standard datetime '%Y-%m-%d'.
+5. Cleaning the unncessary symbols (+ and , ) to normal space and changing the datatype to int of 'Installs' column.
+6. Cleaning the 'Reviews' column and changing the datatype to int.
+7. Cleaning the unncessary symbols ($ ) to normal space and changing the datatype to int of 'Price' column.
+8. Now saved the csv as 'play_store.csv'.
+9. Now that my data is again not getting imported completely because of encoding.
+10. To tackle this I first trucated the whole table. Now I need to import the data to this empty table using external file using "infile statement" (used in tranasactional statements in mysql server). But it is bydefault disabled.
+11. To enable it go to C drive --> ProgramData --> MySQL --> MySQL Server 8.0 --> open the my file in notepad (before opeing the file in notepad go to services and pause the MySQL 8.0)
+ --> 
+Go to CLIENT SECTION --> 
+# default-character-set=
+local_infile=ON 
+-->
+Go to SERVER SECTION --> 
+# server_type=3
+[mysqld]
+local_infile=ON
+-->
+press ctrl + f and search "secure"
+and remove the file path for secure-file-priv="" 
+-->
+Save the file.
+***Note***:- The file won't get saved you need to goto security under properties of the my file and change the pc user to write under edit option.
+--> Save the file and restart the pc.
+--> To load the file use infile statement now.
+The code (Use it in local drive space only):-
+LOAD DATA INFILE 'C:/Users/USER-PC/Desktop/Akash Cloudy ML/6. SQL/SQL Projects/5. Google Play Store/play_store.csv'
+INTO TABLE googleplaystore.play_store
+FIELDS TERMINATED BY ','
+OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+
+
